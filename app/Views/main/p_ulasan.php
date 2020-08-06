@@ -1,4 +1,4 @@
-<section class="site-section testimonial-wrap bg-img" style="background-image: url(sval/images/hero3.png)" id="testimoni-section" data-aos="fade up">
+<section class="site-section testimonial-wrap bg-img" style="background-image: url(asset_main/sval/images/hero3.png)" id="testimoni-section" data-aos="fade up">
     <div class="container ">
         <div class="row mb-5 ">
             <div class="col-12 text-center ">
@@ -16,7 +16,7 @@
                 </blockquote>
 
                 <figure class="mb-4 d-flex align-items-center justify-content-center ">
-                    <div><img src="sval/images/person_3.jpg " alt="Image " class="w-50 img-fluid mb-3 "></div>
+                    <div><img src="asset_main/sval/images/person_3.jpg " alt="Image " class="w-50 img-fluid mb-3 "></div>
                     <p>Scott McTominay</p>
                 </figure>
             </div>
@@ -28,7 +28,7 @@
                         earum unde iusto.&rdquo;</p>
                 </blockquote>
                 <figure class="mb-4 d-flex align-items-center justify-content-center ">
-                    <div><img src="sval/images/person_2.jpg " alt="Image " class="w-50 img-fluid mb-3 "></div>
+                    <div><img src="asset_main/sval/images/person_2.jpg " alt="Image " class="w-50 img-fluid mb-3 "></div>
                     <p>Scott McTominay</p>
                 </figure>
 
@@ -42,7 +42,7 @@
                         earum unde iusto.&rdquo;</p>
                 </blockquote>
                 <figure class="mb-4 d-flex align-items-center justify-content-center ">
-                    <div><img src="sval/images/person_4.jpg " alt="Image " class="w-50 img-fluid mb-3 "></div>
+                    <div><img src="asset_main/sval/images/person_4.jpg " alt="Image " class="w-50 img-fluid mb-3 "></div>
                     <p>Scott McTominay</p>
                 </figure>
             </div>
@@ -55,7 +55,7 @@
                         earum unde iusto.&rdquo;</p>
                 </blockquote>
                 <figure class="mb-4 d-flex align-items-center justify-content-center ">
-                    <div><img src="sval/images/person_4.jpg " alt="Image " class="w-50 img-fluid mb-3 "></div>
+                    <div><img src="asset_main/sval/images/person_4.jpg " alt="Image " class="w-50 img-fluid mb-3 "></div>
                     <p>Scott McTominay</p>
                 </figure>
             </div>

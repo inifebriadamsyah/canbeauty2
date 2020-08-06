@@ -1,4 +1,4 @@
- <div class="site-section bg-img2" style="background-image: url(sval/images/hero4.png)" id="paket-section">
+ <div class="site-section bg-img2" style="background-image: url(asset_main/sval/images/hero4.png)" id="paket-section">
      <div class="container">
          <div class="row mt-5 mb-5 ">
              <div class="col-md-9">
@@ -13,7 +13,7 @@
                          <div class="candidate_active owl-carousel">
                              <div class="single_candidates text-center">
                                  <div class="thumb">
-                                     <img src="sval/images/paket1.png" alt="">
+                                     <img src="asset_main/sval/images/paket1.png" alt="">
                                  </div>
                                  <a href="#">
                                      <h4>Nama Paket</h4>
@@ -23,7 +23,7 @@
                              </div>
                              <div class="single_candidates text-center">
                                  <div class="thumb">
-                                     <img src="sval/images/paket1.png" alt="">
+                                     <img src="asset_main/sval/images/paket1.png" alt="">
                                  </div>
                                  <a href="#">
                                      <h4>Nama Paket</h4>
@@ -33,7 +33,7 @@
                              </div>
                              <div class="single_candidates text-center">
                                  <div class="thumb">
-                                     <img src="sval/images/paket1.png" alt="">
+                                     <img src="asset_main/sval/images/paket1.png" alt="">
                                  </div>
                                  <a href="#">
                                      <h4>Nama Paket</h4>
@@ -43,7 +43,7 @@
                              </div>
                              <div class="single_candidates text-center">
                                  <div class="thumb">
-                                     <img src="sval/images/paket1.png" alt="">
+                                     <img src="asset_main/sval/images/paket1.png" alt="">
                                  </div>
                                  <a href="#">
                                      <h4>Nama Paket</h4>
@@ -53,7 +53,7 @@
                              </div>
                              <div class="single_candidates text-center">
                                  <div class="thumb">
-                                     <img src="sval/images/paket1.png" alt="">
+                                     <img src="asset_main/sval/images/paket1.png" alt="">
                                  </div>
                                  <a href="#">
                                      <h4>Nama Paket</h4>
@@ -63,7 +63,7 @@
                              </div>
                              <div class="single_candidates text-center">
                                  <div class="thumb">
-                                     <img src="sval/images/paket1.png" alt="">
+                                     <img src="asset_main/sval/images/paket1.png" alt="">
                                  </div>
                                  <a href="#">
                                      <h4>Nama Paket</h4>
@@ -73,7 +73,7 @@
                              </div>
                              <div class="single_candidates text-center">
                                  <div class="thumb">
-                                     <img src="sval/images/paket1.png" alt="">
+                                     <img src="asset_main/sval/images/paket1.png" alt="">
                                  </div>
                                  <a href="#">
                                      <h4>Nama Paket</h4>
@@ -83,7 +83,7 @@
                              </div>
                              <div class="single_candidates text-center">
                                  <div class="thumb">
-                                     <img src="sval/images/paket1.png" alt="">
+                                     <img src="asset_main/sval/images/paket1.png" alt="">
                                  </div>
                                  <a href="#">
                                      <h4>Nama Paket</h4>
@@ -93,7 +93,7 @@
                              </div>
                              <div class="single_candidates text-center">
                                  <div class="thumb">
-                                     <img src="sval/images/paket1.png" alt="">
+                                     <img src="asset_main/sval/images/paket1.png" alt="">
                                  </div>
                                  <a href="#">
                                      <h4>Nama Paket</h4>
@@ -103,7 +103,7 @@
                              </div>
                              <div class="single_candidates text-center">
                                  <div class="thumb">
-                                     <img src="sval/images/paket1.png" alt="">
+                                     <img src="asset_main/sval/images/paket1.png" alt="">
                                  </div>
                                  <a href="#">
                                      <h4>Nama Paket</h4>
@@ -113,7 +113,7 @@
                              </div>
                              <div class="single_candidates text-center">
                                  <div class="thumb">
-                                     <img src="sval/images/paket1.png" alt="">
+                                     <img src="asset_main/sval/images/paket1.png" alt="">
                                  </div>
                                  <a href="#">
                                      <h4>Nama Paket</h4>

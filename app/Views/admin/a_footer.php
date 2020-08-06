@@ -7,9 +7,9 @@
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">No</th>
-                    <th scope="col" style="width: 40%;">Ulasan</th>
-                    <th scope="col">Gambar Pembeli</th>
-                    <th scope="col">Nama Pembeli</th>
+                    <th scope="col">Footer Text</th>
+                    <th scope="col">Facebook</th>
+                    <th scope="col">Instagram</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -21,7 +21,6 @@
                     <td></td>
                     <td>
                         <a href="javascript:void(0);" class="btn btn-warning"> Edit </a>
-                        <a href="javascript:void(0);" class="btn btn-danger"> Delete </a>
                     </td>
                 </tr>
             </tbody>

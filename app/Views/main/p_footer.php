@@ -35,7 +35,7 @@
 </div>
 <!-- Scroll Up -->
 <div id="back-top" data-aos="fade-up" data-aos-delay="100">
-    <a title="hubungi kami" href="#home-section"><img src="sval/images/whatsapp.png" alt="logo can beauty" width="44px" height="44px">
+    <a title="hubungi kami" href="#home-section"><img src="asset_main/sval/images/whatsapp.png" alt="logo can beauty" width="44px" height="44px">
     </a>
 </div>
 

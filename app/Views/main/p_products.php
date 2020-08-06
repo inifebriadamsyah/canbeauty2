@@ -12,10 +12,10 @@
                 <div class="shape1" style="left: -40px; opacity: 0.25;"></div>
                 <div class="shape3" style="right: 100px; opacity: 0.25; ;"></div>
                 <div class="owl-carousel slide-one-item-alt">
-                    <img src="sval/images/slide1.jpeg" style="border-radius: 20px;" alt="Image" class="img-fluid">
-                    <img src="sval/images/slide2.jpeg" style="border-radius: 20px;" alt="Image" class="img-fluid">
-                    <img src="sval/images/slide3.jpeg" style="border-radius: 20px;" alt="Image" class="img-fluid">
-                    <img src="sval/images/slide4.png" style="border-radius: 20px;" alt="Image" class="img-fluid">
+                    <img src="asset_main/sval/images/slide1.jpeg" style="border-radius: 20px;" alt="Image" class="img-fluid">
+                    <img src="asset_main/sval/images/slide2.jpeg" style="border-radius: 20px;" alt="Image" class="img-fluid">
+                    <img src="asset_main/sval/images/slide3.jpeg" style="border-radius: 20px;" alt="Image" class="img-fluid">
+                    <img src="asset_main/sval/images/slide4.png" style="border-radius: 20px;" alt="Image" class="img-fluid">
                 </div>
                 <div class="custom-direction">
                     <a href="#" class="custom-prev"><span><span class="icon-keyboard_backspace"></span></span></a><a href="#" class="custom-next"><span><span class="icon-keyboard_backspace"></span></span></a>
