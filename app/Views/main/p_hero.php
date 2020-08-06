@@ -33,30 +33,32 @@
     <div class="hero-slideshow owl-carousel">
         <!-- Single Slide -->
         <div class="single-slide bg-img">
-            <!-- Background Image-->
-            <div class="slide-bg-img bg-img bg-overlay" style="background-image: url(asset_main/sval/images/slide3.jpeg);"></div>
-            <!-- Welcome Text -->
-            <div class="container h-100">
-                <div class="row h-100 align-items-center justify-content-center">
-                    <div class="col-12 col-lg-9">
-                        <div class="welcome-text text-center">
-                            <h2 data-delay="100ms">Coming <span>soon!</span></h2>
-                            <p data-delay="275ms">We Provide the best beauty products!</p>
-                            <br>
-                            <div data-delay="500ms">
-                                <a href="#contact-section" class="btn smoothscroll btn-primary mb-2">Beli Sekarang</a>
+            <?php foreach ($hero as $h) : ?>
+                <!-- Background Image-->
+                <div class="slide-bg-img bg-img bg-overlay" style="background-image: url(asset_main/sval/images/<?= $h['background']; ?>);"></div>
+                <!-- Welcome Text -->
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center justify-content-center">
+                        <div class="col-12 col-lg-9">
+                            <div class="welcome-text text-center">
+                                <h2 data-delay="100ms"><span><?= $h['judul']; ?></span></h2>
+                                <p data-delay="275ms"><?= $h['deskripsi']; ?></p>
+                                <br>
+                                <div data-delay="500ms">
+                                    <a href="#contact-section" class="btn smoothscroll btn-primary mb-2"><?= $h['button']; ?></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <a href="#paket-section" class="mouse smoothscroll">
-                <span class="mouse-icon">
-                    <span class="mouse-wheel"></span>
-                </span>
-            </a>
-            <!-- Slide Duration Indicator -->
-            <div class="slide-du-indicator"></div>
+                <a href="#paket-section" class="mouse smoothscroll">
+                    <span class="mouse-icon">
+                        <span class="mouse-wheel"></span>
+                    </span>
+                </a>
+                <!-- Slide Duration Indicator -->
+                <div class="slide-du-indicator"></div>
+            <?php endforeach; ?>
         </div>
 
         <!-- Single Slide -->
@@ -86,6 +88,7 @@
             <!-- Slide Duration Indicator -->
             <div class="slide-du-indicator"></div>
         </div>
+
 
         <!-- Single Slide -->
         <div class="single-slide bg-img">
