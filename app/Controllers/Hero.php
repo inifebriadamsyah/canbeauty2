@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use app\Models\HeroModel;
+use App\Models\HeroModel;
 
 class Hero extends BaseController
 {
@@ -19,9 +19,7 @@ class Hero extends BaseController
             'title' => 'Admin Canbeauty.id',
             'hero' => $hero
         ];
-
         dd($hero);
-
         return view('admin/a_hero', $data);
     }
 }

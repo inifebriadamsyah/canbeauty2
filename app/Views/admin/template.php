@@ -36,7 +36,6 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-
             <!-- Heading -->
             <div class="sidebar-heading">
                 Komponen <br>
@@ -44,50 +43,50 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="/">
                     <i class="fas fa-home"></i>
                     <span>Beranda</span></a>
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="/admin/profile">
                     <i class="fas fa-store-alt"></i>
                     <span>Profile Perusahaan</span>
                 </a>
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="/admin/products">
                     <i class="far fa-newspaper"></i>
                     <span>Produk Kami</span></a>
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="/admin/paket">
                     <i class="fas fa-shopping-cart"></i>
                     <span>Paket Penjualan</span></a>
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="/admin/testimoni">
                     <i class="fas fa-photo-video"></i>
                     <span>Testimoni</span></a>
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="/admin/ulasan">
                     <i class="fas fa-users"></i>
                     <span>Ulasan Pembeli</span></a>
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="/admin/contact">
                     <i class="fas fa-address-card"></i>
                     <span>Kontak</span></a>
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="/admin/footer">
                     <i class="fas fa-shoe-prints"></i>
                     <span>Footer</span></a>
             </li>
@@ -149,14 +148,7 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800" style="font-weight: 700;">
-                            Dashboard
-                        </h1>
-                    </div>
-                </div>
+                <?= $this->renderSection('content'); ?>
                 <!-- /.container-fluid -->
             </div>
             <!-- End of Main Content -->

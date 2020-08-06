@@ -2,8 +2,6 @@
 
 namespace App\Controllers;
 
-
-
 class Admin extends BaseController
 {
 	protected $heroModel;
@@ -14,22 +12,65 @@ class Admin extends BaseController
 
 	public function index()
 	{
-		//$hero = $this->heroModel->findAll();
 		$data = [
-			'title' => 'Admin Canbeauty.id',
-			//'hero' => $hero
+			'title' => 'Admin | Canbeauty.id',
 		];
-
-		echo view('admin/template');
-		echo view('admin/a_hero');
-		echo view('admin/a_profile');
-		echo view('admin/a_products');
-		echo view('admin/a_paket');
-		echo view('admin/a_testimoni');
-		echo view('admin/a_ulasan');
-		echo view('admin/a_contact');
-		echo view('admin/a_footer');
+		return view('admin/a_hero', $data);
 	}
 
-	//--------------------------------------------------------------------
+	public function profile()
+	{
+		$data = [
+			'title' => 'Admin | Canbeauty.id',
+		];
+		return view('admin/a_profile', $data);
+	}
+
+	public function products()
+	{
+		$data = [
+			'title' => 'Admin | Canbeauty.id',
+		];
+		return view('admin/a_products', $data);
+	}
+
+	public function paket()
+	{
+		$data = [
+			'title' => 'Admin | Canbeauty.id',
+		];
+		return view('admin/a_paket', $data);
+	}
+
+	public function testimoni()
+	{
+		$data = [
+			'title' => 'Admin | Canbeauty.id',
+		];
+		return view('admin/a_testimoni', $data);
+	}
+
+	public function ulasan()
+	{
+		$data = [
+			'title' => 'Admin | Canbeauty.id',
+		];
+		return view('admin/a_ulasan', $data);
+	}
+
+	public function contact()
+	{
+		$data = [
+			'title' => 'Admin | Canbeauty.id',
+		];
+		return view('admin/a_contact', $data);
+	}
+
+	public function footer()
+	{
+		$data = [
+			'title' => 'Admin | Canbeauty.id',
+		];
+		return view('admin/a_footer', $data);
+	}
 }
