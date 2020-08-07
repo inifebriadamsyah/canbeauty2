@@ -6,6 +6,6 @@ use CodeIgniter\Model;
 
 class ProductsModel extends Model
 {
-    protected $table      = 'hero';
+    protected $table      = 'produk';
     protected $primaryKey = 'produk';
 }

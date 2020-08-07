@@ -26,15 +26,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="javascript:void(0);" class="btn btn-warning"> Edit </a>
-                        </td>
-                    </tr>
+                    <?php $i = 1; ?>
+                    <?php foreach ($footer as $f) : ?>
+                        <tr>
+                            <th scope="row">
+                                <?= $i++; ?>
+                            </th>
+                            <td><?= $f['footer_text']; ?></td>
+                            <td><?= $f['facebook']; ?></td>
+                            <td><?= $f['instagram']; ?></td>
+                            <td>
+                                <a href="javascript:void(0);" class="btn btn-warning"> Edit </a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>

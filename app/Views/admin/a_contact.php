@@ -27,16 +27,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="javascript:void(0);" class="btn btn-warning"> Edit </a>
-                        </td>
-                    </tr>
+                    <?php $i = 1; ?>
+                    <?php foreach ($kontak as $k) : ?>
+                        <tr>
+                            <th scope="row"> <?= $i++; ?> </th>
+                            <td><?= $k['alamat']; ?></td>
+                            <td><?= $k['telpon']; ?></td>
+                            <td><?= $k['facebook']; ?></td>
+                            <td><?= $k['instagram']; ?></td>
+                            <td>
+                                <a href="javascript:void(0);" class="btn btn-warning"> Edit </a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>

@@ -27,17 +27,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="javascript:void(0);" class="btn btn-warning"> Edit </a>
-                            <a href="javascript:void(0);" class="btn btn-danger"> Delete </a>
-                        </td>
-                    </tr>
+                    <?php $i = 1; ?>
+                    <?php foreach ($paket as $p) : ?>
+                        <tr>
+                            <th scope="row">
+                                <?= $i++; ?>
+                            </th>
+                            <td><?= $p['nama_paket']; ?></td>
+                            <td><?= $p['harga_paket']; ?></td>
+                            <td><?= $p['deskripsi_paket']; ?></td>
+                            <td><?= $p['image']; ?></td>
+                            <td>
+                                <a href="javascript:void(0);" class="btn btn-warning"> Edit </a>
+                                <a href="javascript:void(0);" class="btn btn-danger"> Delete </a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>

@@ -27,16 +27,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="javascript:void(0);" class="btn btn-warning"> Edit </a>
-                        </td>
-                    </tr>
+                    <?php $i = 1; ?>
+                    <?php foreach ($profile as $p) : ?>
+                        <tr>
+                            <th scope="row">
+                                <?= $i++; ?>
+                            </th>
+                            <td><?= $p['1st_desc']; ?></td>
+                            <td><?= $p['sub_title']; ?></td>
+                            <td><?= $p['sub_title']; ?></td>
+                            <td><?= $p['3nd_desc']; ?></td>
+                            <td>
+                                <a href="javascript:void(0);" class="btn btn-warning"> Edit </a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>

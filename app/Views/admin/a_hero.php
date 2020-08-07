@@ -27,9 +27,12 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php $i = 1; ?>
                     <?php foreach ($hero as $h) : ?>
                         <tr>
-                            <th scope="row">1</th>
+                            <th scope="row">
+                                <?= $i++; ?>
+                            </th>
                             <td><?= $h['judul']; ?></td>
                             <td><?= $h['deskripsi']; ?></td>
                             <td><?= $h['button']; ?></td>

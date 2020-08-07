@@ -43,50 +43,50 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="/">
+                <a class="nav-link" href="hero">
                     <i class="fas fa-home"></i>
                     <span>Beranda</span></a>
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="/admin/profile">
+                <a class="nav-link" href="profile">
                     <i class="fas fa-store-alt"></i>
                     <span>Profile Perusahaan</span>
                 </a>
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="/admin/products">
+                <a class="nav-link" href="products">
                     <i class="far fa-newspaper"></i>
                     <span>Produk Kami</span></a>
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="/admin/paket">
+                <a class="nav-link" href="paket">
                     <i class="fas fa-shopping-cart"></i>
                     <span>Paket Penjualan</span></a>
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="/admin/testimoni">
+                <a class="nav-link" href="testimoni">
                     <i class="fas fa-photo-video"></i>
                     <span>Testimoni</span></a>
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="/admin/ulasan">
+                <a class="nav-link" href="ulasan">
                     <i class="fas fa-users"></i>
                     <span>Ulasan Pembeli</span></a>
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="/admin/contact">
+                <a class="nav-link" href="kontak">
                     <i class="fas fa-address-card"></i>
                     <span>Kontak</span></a>
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="/admin/footer">
+                <a class="nav-link" href="footer">
                     <i class="fas fa-shoe-prints"></i>
                     <span>Footer</span></a>
             </li>

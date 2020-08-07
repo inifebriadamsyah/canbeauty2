@@ -25,15 +25,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="javascript:void(0);" class="btn btn-warning"> Edit </a>
-                            <a href="javascript:void(0);" class="btn btn-danger"> Delete </a>
-                        </td>
-                    </tr>
+                    <?php $i = 1; ?>
+                    <?php foreach ($testimoni as $t) : ?>
+                        <tr>
+                            <th scope="row">
+                                <?= $i++; ?>
+                            </th>
+                            <td><?= $t['category']; ?></td>
+                            <td><?= $t['image']; ?></td>
+                            <td>
+                                <a href="javascript:void(0);" class="btn btn-warning"> Edit </a>
+                                <a href="javascript:void(0);" class="btn btn-danger"> Delete </a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
