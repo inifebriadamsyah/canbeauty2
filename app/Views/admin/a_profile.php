@@ -5,7 +5,7 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h2 class="h3 mb-0 text-gray-800" style="font-weight: 700;">
-            Hero Area | Beranda
+            Profil Perusahaan
         </h2>
     </div>
 </div>

@@ -27,17 +27,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td></td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>Otto</td>
-                        <td>
-                            <a href="javascript:void(0);" class="btn btn-warning"> Edit </a>
-                            <a href="javascript:void(0);" class="btn btn-danger"> Delete </a>
-                        </td>
-                    </tr>
+                    <?php foreach ($hero as $h) : ?>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td><?= $h['judul']; ?></td>
+                            <td><?= $h['deskripsi']; ?></td>
+                            <td><?= $h['button']; ?></td>
+                            <td><?= $h['background']; ?></td>
+                            <td>
+                                <a href="javascript:void(0);" class="btn btn-warning"> Edit </a>
+                                <a href="javascript:void(0);" class="btn btn-danger"> Delete </a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>

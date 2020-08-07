@@ -19,7 +19,7 @@ class Hero extends BaseController
             'title' => 'Admin Canbeauty.id',
             'hero' => $hero
         ];
-
+        //dd($hero);
         echo view('admin/a_hero', $data);
     }
 }
