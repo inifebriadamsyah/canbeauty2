@@ -4,8 +4,8 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class FooterModel extends Model
+class ContactsModel extends Model
 {
-    protected $table      = 'footer';
+    protected $table      = 'kontak';
     protected $primaryKey = 'id';
 }
