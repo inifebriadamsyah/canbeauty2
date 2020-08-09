@@ -22,4 +22,14 @@ class Footer extends BaseController
         //dd($Footer);
         echo view('admin/a_footer', $data);
     }
+
+    public function getView()
+    {
+        $footer = $this->footerModel->findAll();
+        $data = [
+            'footer' => $footer
+        ];
+        //dd($Footer);
+        echo view('main/p_footer', $data);
+    }
 }

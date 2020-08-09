@@ -22,4 +22,15 @@ class Hero extends BaseController
         //dd($hero);
         echo view('admin/a_hero', $data);
     }
+
+    public function getView()
+    {
+        $hero = $this->heroModel->findAll();
+        $data = [
+            'title' => 'Admin Canbeauty.id',
+            'hero' => $hero
+        ];
+        //dd($hero);
+        echo view('main/p_hero', $data);
+    }
 }

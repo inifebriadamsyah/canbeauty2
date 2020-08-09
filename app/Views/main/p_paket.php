@@ -11,116 +11,18 @@
                  <div class="row">
                      <div class="col-lg-12">
                          <div class="candidate_active owl-carousel">
-                             <div class="single_candidates text-center">
-                                 <div class="thumb">
-                                     <img src="asset_main/sval/images/paket1.png" alt="">
+                             <?php foreach ($paket as $p) : ?>
+                                 <div class="single_candidates text-center">
+                                     <div class="thumb">
+                                         <img src="asset_main/sval/images/<?= $p['image']; ?>" alt="">
+                                     </div>
+                                     <a href="#">
+                                         <h4><?= $p['nama_paket']; ?></h4>
+                                     </a>
+                                     <p class="mb-3"><?= $p['deskripsi_paket']; ?></p>
+                                     <a href="#" class="btn btn-thirdnary"><?= $p['harga_paket']; ?></a>
                                  </div>
-                                 <a href="#">
-                                     <h4>Nama Paket</h4>
-                                 </a>
-                                 <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                 <a href="#" class="btn btn-thirdnary">Rp 200.000</a>
-                             </div>
-                             <div class="single_candidates text-center">
-                                 <div class="thumb">
-                                     <img src="asset_main/sval/images/paket1.png" alt="">
-                                 </div>
-                                 <a href="#">
-                                     <h4>Nama Paket</h4>
-                                 </a>
-                                 <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                 <a href="#" class="btn btn-thirdnary">Rp 200.000</a>
-                             </div>
-                             <div class="single_candidates text-center">
-                                 <div class="thumb">
-                                     <img src="asset_main/sval/images/paket1.png" alt="">
-                                 </div>
-                                 <a href="#">
-                                     <h4>Nama Paket</h4>
-                                 </a>
-                                 <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                 <a href="#" class="btn btn-thirdnary">Rp 200.000</a>
-                             </div>
-                             <div class="single_candidates text-center">
-                                 <div class="thumb">
-                                     <img src="asset_main/sval/images/paket1.png" alt="">
-                                 </div>
-                                 <a href="#">
-                                     <h4>Nama Paket</h4>
-                                 </a>
-                                 <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                 <a href="#" class="btn btn-thirdnary">Rp 200.000</a>
-                             </div>
-                             <div class="single_candidates text-center">
-                                 <div class="thumb">
-                                     <img src="asset_main/sval/images/paket1.png" alt="">
-                                 </div>
-                                 <a href="#">
-                                     <h4>Nama Paket</h4>
-                                 </a>
-                                 <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                 <a href="#" class="btn btn-thirdnary">Rp 200.000</a>
-                             </div>
-                             <div class="single_candidates text-center">
-                                 <div class="thumb">
-                                     <img src="asset_main/sval/images/paket1.png" alt="">
-                                 </div>
-                                 <a href="#">
-                                     <h4>Nama Paket</h4>
-                                 </a>
-                                 <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                 <a href="#" class="btn btn-thirdnary">Rp 200.000</a>
-                             </div>
-                             <div class="single_candidates text-center">
-                                 <div class="thumb">
-                                     <img src="asset_main/sval/images/paket1.png" alt="">
-                                 </div>
-                                 <a href="#">
-                                     <h4>Nama Paket</h4>
-                                 </a>
-                                 <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                 <a href="#" class="btn btn-thirdnary">Rp 200.000</a>
-                             </div>
-                             <div class="single_candidates text-center">
-                                 <div class="thumb">
-                                     <img src="asset_main/sval/images/paket1.png" alt="">
-                                 </div>
-                                 <a href="#">
-                                     <h4>Nama Paket</h4>
-                                 </a>
-                                 <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                 <a href="#" class="btn btn-thirdnary">Rp 200.000</a>
-                             </div>
-                             <div class="single_candidates text-center">
-                                 <div class="thumb">
-                                     <img src="asset_main/sval/images/paket1.png" alt="">
-                                 </div>
-                                 <a href="#">
-                                     <h4>Nama Paket</h4>
-                                 </a>
-                                 <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                 <a href="#" class="btn btn-thirdnary">Rp 200.000</a>
-                             </div>
-                             <div class="single_candidates text-center">
-                                 <div class="thumb">
-                                     <img src="asset_main/sval/images/paket1.png" alt="">
-                                 </div>
-                                 <a href="#">
-                                     <h4>Nama Paket</h4>
-                                 </a>
-                                 <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                 <a href="#" class="btn btn-thirdnary">Rp 200.000</a>
-                             </div>
-                             <div class="single_candidates text-center">
-                                 <div class="thumb">
-                                     <img src="asset_main/sval/images/paket1.png" alt="">
-                                 </div>
-                                 <a href="#">
-                                     <h4>Nama Paket</h4>
-                                 </a>
-                                 <p class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                 <a href="#" class="btn btn-thirdnary">Rp 200.000</a>
-                             </div>
+                             <?php endforeach; ?>
                          </div>
                      </div>
                  </div>

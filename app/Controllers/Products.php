@@ -22,4 +22,15 @@ class Products extends BaseController
         //dd($products);
         echo view('admin/a_products', $data);
     }
+
+    public function getView()
+    {
+        $products = $this->productsModel->findAll();
+        $data = [
+            'title' => 'Admin Canbeauty.id',
+            'products' => $products
+        ];
+        //dd($products);
+        echo view('main/p_products', $data);
+    }
 }

@@ -4,11 +4,6 @@ namespace App\Controllers;
 
 class Admin extends BaseController
 {
-	protected $heroModel;
-	public function __construct()
-	{
-		//$this->heroModel = new HeroModel();
-	}
 
 	public function index()
 	{

@@ -22,4 +22,15 @@ class Paket extends BaseController
         //dd($paket);
         echo view('admin/a_paket', $data);
     }
+
+    public function getView()
+    {
+        $paket = $this->paketModel->findAll();
+        $data = [
+            'title' => 'Admin Canbeauty.id',
+            'paket' => $paket
+        ];
+        //dd($paket);
+        echo view('main/p_paket', $data);
+    }
 }

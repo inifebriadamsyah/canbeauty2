@@ -2,31 +2,33 @@
     <div class="container ">
         <div class="row ">
             <div class="col-md-12 ">
-                <div class="row ">
-                    <div class="col-md-8 col-lg-8 md-8">
-                        <h2 class=" footer-heading mb-4 ">CanBeauty</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
-                    </div>
-                    <div class="col-md-4 col-lg-4 col-md-4">
-                        <h2 class="footer-heading mb-4">Follow Us</h2>
-                        <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                        <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-                        <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                        <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="border-top pt-5">
-                            <p style="font-family: Exo 2;">
-                                <strong>Copyright</strong> &copy;
-                                <script>
-                                    document.write(new Date().getFullYear());
-                                </script> All rights reserved
-                            </p>
+                <?php foreach ($footer as $f) : ?>
+                    <div class="row ">
+                        <div class="col-md-8 col-lg-8 md-8">
+                            <h2 class="footer-heading mb-4 ">CanBeauty</h2>
+                            <p><?= $f['footer_text']; ?></p>
+                        </div>
+                        <div class="col-md-4 col-lg-4 col-md-4">
+                            <h2 class="footer-heading mb-4">Follow Us</h2>
+                            <a href="<?= $f['facebook']; ?>" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                            <a href="<?= $f['instagram']; ?>" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                            <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                            <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
                         </div>
                     </div>
-                </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="border-top pt-5">
+                                <p style="font-family: Exo 2;">
+                                    <strong>Copyright</strong> &copy;
+                                    <script>
+                                        document.write(new Date().getFullYear());
+                                    </script> All rights reserved
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
 
         </div>

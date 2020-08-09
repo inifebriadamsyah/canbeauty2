@@ -22,4 +22,15 @@ class Ulasan extends BaseController
         //dd($ulasan);
         echo view('admin/a_ulasan', $data);
     }
+
+    public function getView()
+    {
+        $ulasan = $this->ulasanModel->findAll();
+        $data = [
+            'title' => 'Admin Canbeauty.id',
+            'ulasan' => $ulasan
+        ];
+        //dd($ulasan);
+        echo view('main/p_ulasan', $data);
+    }
 }

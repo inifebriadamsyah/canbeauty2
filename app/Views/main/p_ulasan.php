@@ -7,56 +7,18 @@
         </div>
     </div>
     <div class="slide-one-item home-slider owl-carousel ">
-        <div>
-            <div class="testimonial ">
-                <blockquote class="mb-5 ">
-                    <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi
-                        earum unde iusto.&rdquo;</p>
-                </blockquote>
-                <figure class="mb-4 d-flex align-items-center justify-content-center ">
-                    <div><img src="asset_main/sval/images/person_3.jpg " alt="Image " class="w-50 img-fluid mb-3 "></div>
-                    <p>Scott McTominay</p>
-                </figure>
+        <?php foreach ($ulasan as $u) : ?>
+            <div>
+                <div class="testimonial ">
+                    <blockquote class="mb-5 ">
+                        <p>&ldquo;<?= $u['ulasan_teks']; ?>&rdquo;</p>
+                    </blockquote>
+                    <figure class="mb-4 d-flex align-items-center justify-content-center ">
+                        <div><img src="asset_main/sval/images/<?= $u['image_pembeli']; ?>" alt="Image " class="w-50 img-fluid mb-3 "></div>
+                        <p><?= $u['nama_pembeli']; ?></p>
+                    </figure>
+                </div>
             </div>
-        </div>
-        <div>
-            <div class="testimonial ">
-                <blockquote class="mb-5 ">
-                    <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi
-                        earum unde iusto.&rdquo;</p>
-                </blockquote>
-                <figure class="mb-4 d-flex align-items-center justify-content-center ">
-                    <div><img src="asset_main/sval/images/person_2.jpg " alt="Image " class="w-50 img-fluid mb-3 "></div>
-                    <p>Scott McTominay</p>
-                </figure>
-
-            </div>
-        </div>
-
-        <div>
-            <div class="testimonial ">
-                <blockquote class="mb-5 ">
-                    <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi
-                        earum unde iusto.&rdquo;</p>
-                </blockquote>
-                <figure class="mb-4 d-flex align-items-center justify-content-center ">
-                    <div><img src="asset_main/sval/images/person_4.jpg " alt="Image " class="w-50 img-fluid mb-3 "></div>
-                    <p>Scott McTominay</p>
-                </figure>
-            </div>
-        </div>
-
-        <div>
-            <div class="testimonial ">
-                <blockquote class="mb-5 ">
-                    <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi
-                        earum unde iusto.&rdquo;</p>
-                </blockquote>
-                <figure class="mb-4 d-flex align-items-center justify-content-center ">
-                    <div><img src="asset_main/sval/images/person_4.jpg " alt="Image " class="w-50 img-fluid mb-3 "></div>
-                    <p>Scott McTominay</p>
-                </figure>
-            </div>
-        </div>
+        <?php endforeach; ?>
     </div>
 </section>

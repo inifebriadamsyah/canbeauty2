@@ -22,4 +22,15 @@ class Testimoni extends BaseController
         //dd($testimoni);
         echo view('admin/a_testimoni', $data);
     }
+
+    public function getView()
+    {
+        $testimoni = $this->testimoniModel->findAll();
+        $data = [
+            'title' => 'Admin Canbeauty.id',
+            'testimoni' => $testimoni
+        ];
+        //dd($testimoni);
+        echo view('main/p_testimoni', $data);
+    }
 }

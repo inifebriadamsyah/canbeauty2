@@ -23,14 +23,13 @@ class Kontak extends BaseController
         return view('admin/a_contact', $data);
     }
 
-    public function utama()
+    public function getView()
     {
         $kontak = $this->kontakModel->findAll();
         $data = [
-            'title' => 'Admin Canbeauty.id',
             'kontak' => $kontak
         ];
         //dd($ulasan);
-        echo view('admin/a_contact', $data);
+        echo view('main/p_contact', $data);
     }
 }
