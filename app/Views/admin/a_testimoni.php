@@ -31,9 +31,9 @@
                                     <label for="message-text" class="col-form-label">Kategori</label>
                                     <select name="ctl00$MainContent$ddltipe" id="MainContent_ddltipe" class="form-control form-control-rounded" required="required">
                                         <option value="Please Select">Please Select</option>
-                                        <option value="LAPORAN">Category1</option>
-                                        <option value="LAPORAN">Category2</option>
-                                        <option value="ABSENSI">Category3</option>
+                                        <option value="Category1">Category1</option>
+                                        <option value="Category2">Category2</option>
+                                        <option value="Category3">Category3</option>
 
                                     </select>
                                 </div>

@@ -8,7 +8,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Admin - Canbeauty.id</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url(); ?>/asset_admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -211,6 +211,24 @@
     <!-- Page level custom scripts -->
     <script src="<?= base_url(); ?>/asset_admin/js/demo/chart-area-demo.js"></script>
     <script src="<?= base_url(); ?>/asset_admin/js/demo/chart-pie-demo.js"></script>
+
+    <script>
+        function previewImg() {
+            const background = document.querySelector('#background');
+            const backgroundLabel = document.querySelector('.custom-file-label');
+            const imgPreview = document.querySelector('.img-preview');
+
+            backgroundLabel.textContent = background.files[0].name;
+
+            const fileBackground = new FileReader();
+            fileBackground.readAsDataURL(background.files[0]);
+
+            fileBackground.onload = function(e) {
+                imgPreview.src = e.target.result;
+            }
+        }
+    </script>
+
 </body>
 
 </html>
