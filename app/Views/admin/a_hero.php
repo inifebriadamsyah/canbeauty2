@@ -144,15 +144,15 @@
                                             <p>Background</p>
                                             <div class="form-group row">
                                                 <div class="col-md-4">
-                                                    <img src="/img/<?= $h['background']; ?>" class="img-thumbnail img-preview2">
+                                                    <img src="/img/<?= $h['background']; ?>" class="img-thumbnail img-preview" id="editImage">
                                                 </div>
                                                 <div class="col-md-8">
                                                     <div class="custom-file">
-                                                        <input type="file" class="custom-file-input <?= ($validation->hasError('background')) ? 'is-invalid' : ''; ?>" id="background" name="background" value="<?= $h['background']; ?>" onchange="previewImg()">
+                                                        <input type="file" class="custom-file-input <?= ($validation->hasError('background')) ? 'is-invalid' : ''; ?>" id="background" name="background" value="<?= $h['background']; ?>" onchange="previewEdit()">
                                                         <div class="inavlid-feedback">
                                                             <?= $validation->getError('background') ?>
                                                         </div>
-                                                        <label class="custom-file-label" for="background"><?= $h['background']; ?></label>
+                                                        <label class="custom-file-label" for="background" id="backgroundLabel"><?= $h['background']; ?></label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -172,4 +172,50 @@
         </div>
     </div>
 </div>
+<script>
+    function previewImg() {
+        const background = document.querySelector('#background');
+        const backgroundLabel = document.querySelector('.custom-file-label');
+        const imgPreview = document.querySelector('.img-preview');
+
+        backgroundLabel.textContent = background.files[0].name;
+
+        const fileBackground = new FileReader();
+        fileBackground.readAsDataURL(background.files[0]);
+
+        fileBackground.onload = function(e) {
+            imgPreview.src = e.target.result;
+        }
+    }
+
+    function previewEdit() {
+        const background = document.querySelector('#background');
+        const backgroundLabel = document.querySelector('#backgroundLabel');
+        const imgPreview = document.querySelector('#editImage');
+
+        backgroundLabel.textContent = background.files[0].name;
+
+        const fileBackground = new FileReader();
+        fileBackground.readAsDataURL(background.files[0]);
+
+        fileBackground.onload = function(e) {
+            imgPreview.src = e.target.result;
+        }
+    }
+
+    function previewImgPaket() {
+        const background = document.querySelector('#image');
+        const backgroundLabel = document.querySelector('.custom-file-label');
+        const imgPreview = document.querySelector('.img-preview');
+
+        backgroundLabel.textContent = background.files[0].name;
+
+        const fileBackground = new FileReader();
+        fileBackground.readAsDataURL(background.files[0]);
+
+        fileBackground.onload = function(e) {
+            imgPreview.src = e.target.result;
+        }
+    }
+</script>
 <?= $this->endSection(); ?>
