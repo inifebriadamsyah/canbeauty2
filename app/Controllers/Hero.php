@@ -100,9 +100,30 @@ class Hero extends BaseController
             'deskripsi' => 'required',
             'button' => 'required'
             //'background' => 'required'
+        ], [
+            'background' => [
+                'rules' => 'max_size[background,8192]|is_image[background]|mime_in[background,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'max_size' => 'broo, backgrounds file size is too big!',
+                    'is_image' => 'Choose only image format broo!',
+                    'mime_in' => 'Choose only image format broo!'
+                ]
+            ]
         ])) {
-            $validation = \Config\Services::validation();
-            return redirect()->to('/hero')->withInput()->with('validation', $validation);
+            //$validation = \Config\Services::validation();
+            return redirect()->to('/hero')->withInput();
+        }
+
+        $fileBackground = $this->request->getFile('background');
+        //$nameBackground = "";
+
+        if ($fileBackground->getError() == 4) {
+            $nameBackground = $this->request->getVar('oldBackground');;
+        } else {
+            $fileBackground->move('img');
+            $nameBackground = $fileBackground->getName();
+
+            unlink('img/' .  $this->request->getVar('oldBackground'));
         }
 
         $this->heroModel->save([
@@ -110,7 +131,7 @@ class Hero extends BaseController
             'judul' => $this->request->getVar('judul'),
             'deskripsi' => $this->request->getVar('deskripsi'),
             'button' => $this->request->getVar('button'),
-            'background' => $this->request->getVar('background')
+            'background' =>  $nameBackground
         ]);
 
         session()->setFlashdata('update', 'Data berhasil Diupdate.');

@@ -12,10 +12,11 @@
 <div class="row">
     <div class="col-12 ">
         <div class="card my-2 mx-4">
+            <!--
             <div class="col-md-4">
                 <a href="javascript:void(0);" type="button" data-toggle="modal" data-target="#createTugas" class="btn btn-success mb-3 my-3"> + Tambah Konten </a>
             </div>
-
+            -->
             <div class="modal fade" id="createTugas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
@@ -46,21 +47,6 @@
                                     <label for="message-text" class="col-form-label">Deskripsi Sub Title 2:</label>
                                     <textarea class="form-control" id="message-text"></textarea>
                                 </div>
-
-
-                                <!--
-                                <div class="form-group">
-                                    <label for="message-text" class="col-form-label">Format Pengumpulan
-                                        File</label>
-                                    <select name="ctl00$MainContent$ddltipe" id="MainContent_ddltipe" class="form-control form-control-rounded" required="required">
-                                        <option value="Please Select">Please Select</option>
-                                        <option value="LAPORAN">Dokumen (PDF/Doc/xlx)</option>
-                                        <option value="LAPORAN">Gambar (PNG/JPG)</option>
-                                        <option value="ABSENSI">Video</option>
-
-                                    </select>
-                                </div>
-                                -->
                             </form>
                         </div>
                         <div class="modal-footer">

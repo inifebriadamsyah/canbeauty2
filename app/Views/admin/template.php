@@ -212,6 +212,7 @@
     <script src="<?= base_url(); ?>/asset_admin/js/demo/chart-area-demo.js"></script>
     <script src="<?= base_url(); ?>/asset_admin/js/demo/chart-pie-demo.js"></script>
 
+
     <script>
         function previewImg() {
             const background = document.querySelector('#background');
@@ -227,8 +228,22 @@
                 imgPreview.src = e.target.result;
             }
         }
-    </script>
 
+        function previewImgPaket() {
+            const background = document.querySelector('#image');
+            const backgroundLabel = document.querySelector('.custom-file-label');
+            const imgPreview = document.querySelector('.img-preview');
+
+            backgroundLabel.textContent = background.files[0].name;
+
+            const fileBackground = new FileReader();
+            fileBackground.readAsDataURL(background.files[0]);
+
+            fileBackground.onload = function(e) {
+                imgPreview.src = e.target.result;
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -8,64 +8,74 @@
             Paket Penjualan
         </h2>
     </div>
+    <?php if (session()->getFlashdata('pesan')) : ?>
+        <div class="alert alert-success" role="alert">
+            <?= session()->getFlashdata('pesan'); ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if (session()->getFlashdata('hapus')) : ?>
+        <div class="alert alert-danger" role="alert">
+            <?= session()->getFlashdata('hapus'); ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if (session()->getFlashdata('update')) : ?>
+        <div class="alert alert-warning" role="alert">
+            <?= session()->getFlashdata('update'); ?>
+        </div>
+    <?php endif; ?>
 </div>
 <div class="row">
     <div class="col-12 ">
         <div class="card my-2 mx-4">
             <div class="col-md-4">
-                <a href="javascript:void(0);" type="button" data-toggle="modal" data-target="#createTugas" class="btn btn-success mb-3 my-3"> + Tambah Konten </a>
+                <a href="javascript:void(0);" type="button" data-toggle="modal" data-target="#createContent" class="btn btn-success mb-3 my-3"> + Tambah Konten </a>
             </div>
-
-            <div class="modal fade" id="createTugas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="createContent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel" style="font-weight:700">Tambah Hero Carousel Area</h5>
+                            <h5 class="modal-title" id="exampleModalLabel" style="font-weight:700">Tambah Paket Penjualan</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form>
+                            <form action="paket/save" method="POST" enctype="multipart/form-data">
+                                <?= csrf_field(); ?>
                                 <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Nama Paket:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
+                                    <label for="nama_paket" class="col-form-label">Nama Paket:</label>
+                                    <input type="text" class="form-control" id="nama_paket" name="nama_paket" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Harga Paket:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
+                                    <label for="deskripsi_paket" class="col-form-label">Deskripsi Paket:</label>
+                                    <textarea class="form-control" id="deskripsi_paket" name="deskripsi_paket" required></textarea>
                                 </div>
 
-                                <div class="form-group mb-3">
-                                    <label for="message-text" class="col-form-label">Deskripsi Paket:</label>
-                                    <textarea class="form-control" id="message-text"></textarea>
-                                </div>
-
-                                <p>Gambar</p>
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
-                                    <label class="custom-file-label" for="customFile">Choose file</label>
-                                </div>
-
-                                <!--
                                 <div class="form-group">
-                                    <label for="message-text" class="col-form-label">Format Pengumpulan
-                                        File</label>
-                                    <select name="ctl00$MainContent$ddltipe" id="MainContent_ddltipe" class="form-control form-control-rounded" required="required">
-                                        <option value="Please Select">Please Select</option>
-                                        <option value="LAPORAN">Dokumen (PDF/Doc/xlx)</option>
-                                        <option value="LAPORAN">Gambar (PNG/JPG)</option>
-                                        <option value="ABSENSI">Video</option>
-
-                                    </select>
+                                    <label for="harga_paket" class="col-form-label">Harga Paket:</label>
+                                    <input type="text" class="form-control" id="harga_paket" name="harga_paket" required>
                                 </div>
-                                -->
+
+                                <p>Image</p>
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <img src="/asset_main/sval/images/paket1.png" class="img-thumbnail img-preview">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input <?= ($validation->hasError('image')) ? 'is-invalid' : ''; ?>" id="image" name="image" onchange="previewImgPaket()">
+                                            <label class="custom-file-label" for="image">Choose file</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer mt-4">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                    <button type="submit" class="btn btn-success">Simpan</button>
+                                </div>
                             </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                            <button type="button" class="btn btn-success">Simpan</button>
                         </div>
                     </div>
                 </div>
@@ -94,10 +104,65 @@
                             <td><?= $p['deskripsi_paket']; ?></td>
                             <td><?= $p['image']; ?></td>
                             <td>
-                                <a href="javascript:void(0);" class="btn btn-warning"> Edit </a>
-                                <a href="javascript:void(0);" class="btn btn-danger"> Delete </a>
+                                <a href="javascript:void(0);" type="button" data-toggle="modal" data-target="#editContent<?= $p['id']; ?>" class="btn btn-warning"> Edit </a>
+                                <a href="/paket/delete/<?= $p['id']; ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin menghapus baris ini?');"> Delete </a>
                             </td>
                         </tr>
+                    <?php endforeach; ?>
+                    <?php foreach ($paket as $p) : ?>
+                        <div class="modal fade" id="editContent<?= $p['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel" style="font-weight:700">Edit Paket Penjualan</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="paket/update/<?= $p['id']; ?>" method="POST" enctype="multipart/form-data">
+                                            <?= csrf_field(); ?>
+                                            <input type="hidden" name="oldImage" , value="<?= $p['image']; ?>">
+                                            <div class="form-group">
+                                                <label for="nama_paket" class="col-form-label">Nama Paket:</label>
+                                                <input type="text" class="form-control" id="nama_paket" name="nama_paket" value="<?= $p['nama_paket']; ?>" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="deskripsi_paket" class="col-form-label">Deskripsi Paket:</label>
+                                                <input class="form-control" id="deskripsi_paket" name="deskripsi_paket" value="<?= $p['deskripsi_paket']; ?>" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="harga_paket" class="col-form-label">Harga Paket:</label>
+                                                <input type="text" class="form-control" id="harga_paket" name="harga_paket" value="<?= $p['harga_paket']; ?>" required>
+                                            </div>
+
+                                            <p>Image</p>
+                                            <div class="form-group row">
+                                                <div class="col-md-4">
+                                                    <img src="/img/<?= $p['image']; ?>" class="img-thumbnail img-preview">
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input <?= ($validation->hasError('image')) ? 'is-invalid' : ''; ?>" id="image" name="image" value="<?= $p['image']; ?>" onchange="previewImg()">
+                                                        <div class="inavlid-feedback">
+                                                            <?= $validation->getError('image') ?>
+                                                        </div>
+                                                        <label class="custom-file-label" for="image"><?= $p['image']; ?></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="modal-footer mt-4">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                                <button type="submit" class="btn btn-success">Simpan</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     <?php endforeach; ?>
                 </tbody>
             </table>

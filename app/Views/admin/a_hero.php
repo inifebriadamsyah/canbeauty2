@@ -123,8 +123,9 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="hero/update/<?= $h['id']; ?>" method="POST">
+                                        <form action="hero/update/<?= $h['id']; ?>" method="POST" enctype="multipart/form-data">
                                             <?= csrf_field(); ?>
+                                            <input type="hidden" name="oldBackground" , value="<?= $h['background']; ?>">
                                             <div class="form-group">
                                                 <label for="judul" class="col-form-label">Judul:</label>
                                                 <input type="text" class="form-control" id="judul" name="judul" value="<?= $h['judul']; ?>" required>
@@ -143,7 +144,7 @@
                                             <p>Background</p>
                                             <div class="form-group row">
                                                 <div class="col-md-4">
-                                                    <img src="/asset_main/sval/images/slide3.jpeg" class="img-thumbnail img-preview">
+                                                    <img src="/img/<?= $h['background']; ?>" class="img-thumbnail img-preview2">
                                                 </div>
                                                 <div class="col-md-8">
                                                     <div class="custom-file">
@@ -151,7 +152,7 @@
                                                         <div class="inavlid-feedback">
                                                             <?= $validation->getError('background') ?>
                                                         </div>
-                                                        <label class="custom-file-label" for="background">Choose file</label>
+                                                        <label class="custom-file-label" for="background"><?= $h['background']; ?></label>
                                                     </div>
                                                 </div>
                                             </div>
