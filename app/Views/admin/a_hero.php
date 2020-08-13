@@ -189,14 +189,14 @@
     }
 
     function previewEdit() {
-        const background = document.querySelector('#background');
+        const background2 = document.querySelector('#background');
         const backgroundLabel = document.querySelector('#backgroundLabel');
         const imgPreview = document.querySelector('#editImage');
 
-        backgroundLabel.textContent = background.files[0].name;
+        backgroundLabel.textContent = background2.files[0].name;
 
         const fileBackground = new FileReader();
-        fileBackground.readAsDataURL(background.files[0]);
+        fileBackground.readAsDataURL(background2.files[0]);
 
         fileBackground.onload = function(e) {
             imgPreview.src = e.target.result;
