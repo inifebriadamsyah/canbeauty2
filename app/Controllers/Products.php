@@ -39,103 +39,99 @@ class Products extends BaseController
     public function save()
     {
         if (!$this->validate([
-            'judul' => 'required',
-            'deskripsi' => 'required',
-            'button' => 'required'
-            //'background' => 'required'
+            'nama_produk' => 'required',
+            'deskripsi' => 'required'
+            //'image' => 'required'
         ], [
-            'background' => [
-                'rules' => 'max_size[background,8192]|is_image[background]|mime_in[background,image/jpg,image/jpeg,image/png]',
+            'image' => [
+                'rules' => 'max_size[image,8192]|is_image[image]|mime_in[image,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'max_size' => 'broo, backgrounds file size is too big!',
+                    'max_size' => 'broo, images file size is too big!',
                     'is_image' => 'Choose only image format broo!',
                     'mime_in' => 'Choose only image format broo!'
                 ]
             ]
         ])) {
             // $validation = \Config\Services::validation();
-            // return redirect()->to('/hero')->withInput()->with('validation', $validation);
-            return redirect()->to('/hero')->withInput();
+            // return redirect()->to('/products')->withInput()->with('validation', $validation);
+            return redirect()->to('/products')->withInput();
         }
 
-        $fileBackground = $this->request->getFile('background');
+        $fileimage = $this->request->getFile('image');
 
-        if ($fileBackground->getError() == 4) {
-            $nameBackground = 'slide3.jpeg';
+        if ($fileimage->getError() == 4) {
+            $nameimage = 'slide3.jpeg';
         } else {
-            $fileBackground->move('img');
-            $nameBackground = $fileBackground->getName();
+            $fileimage->move('img');
+            $nameimage = $fileimage->getName();
         }
 
-        $this->heroModel->save([
-            'judul' => $this->request->getVar('judul'),
+        $this->productsModel->save([
+            'nama_produk' => $this->request->getVar('nama_produk'),
             'deskripsi' => $this->request->getVar('deskripsi'),
-            'button' => $this->request->getVar('button'),
-            'background' => $nameBackground
+            'image' => $nameimage
         ]);
 
         session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
 
-        return redirect()->to('/hero');
+        return redirect()->to('/products');
     }
 
     public function delete($id)
     {
-        $hero = $this->heroModel->find($id);
+        $products = $this->productsModel->find($id);
 
-        if ($hero['background'] != 'slide3.jpeg') {
-            unlink('img/' . $hero['background']);
+        if ($products['image'] != 'slide3.jpeg') {
+            unlink('img/' . $products['image']);
         }
 
-        $this->heroModel->delete($id);
+        $this->productsModel->delete($id);
         session()->setFlashdata('hapus', 'Data berhasil dihapus.');
 
-        return redirect()->to('/hero');
+        return redirect()->to('/products');
     }
 
     public function update($id)
     {
         if (!$this->validate([
-            'judul' => 'required',
-            'deskripsi' => 'required',
-            'button' => 'required'
-            //'background' => 'required'
+            'nama_produk' => 'required',
+            'deskripsi' => 'required'
+            //'image' => 'required'
         ], [
-            'background' => [
-                'rules' => 'max_size[background,8192]|is_image[background]|mime_in[background,image/jpg,image/jpeg,image/png]',
+            'image' => [
+                'rules' => 'max_size[image,8192]|is_image[image]|mime_in[image,image/jpg,image/jpeg,image/png]',
                 'errors' => [
-                    'max_size' => 'broo, backgrounds file size is too big!',
+                    'max_size' => 'broo, images file size is too big!',
                     'is_image' => 'Choose only image format broo!',
                     'mime_in' => 'Choose only image format broo!'
                 ]
             ]
         ])) {
             //$validation = \Config\Services::validation();
-            return redirect()->to('/hero')->withInput();
+            return redirect()->to('/products')->withInput();
         }
 
-        $fileBackground = $this->request->getFile('background');
-        //$nameBackground = "";
+        $fileimage = $this->request->getFile('image');
+        //$nameimage = "";
 
-        if ($fileBackground->getError() == 4) {
-            $nameBackground = $this->request->getVar('oldBackground');;
+        if ($fileimage->getError() == 4) {
+            $nameimage = $this->request->getVar('oldimage');;
         } else {
-            $fileBackground->move('img');
-            $nameBackground = $fileBackground->getName();
+            $fileimage->move('img');
+            $nameimage = $fileimage->getName();
 
-            unlink('img/' .  $this->request->getVar('oldBackground'));
+            unlink('img/' .  $this->request->getVar('oldimage'));
         }
 
-        $this->heroModel->save([
+        $this->productsModel->save([
             'id' => $id,
-            'judul' => $this->request->getVar('judul'),
+            'nama_produk' => $this->request->getVar('nama_produk'),
             'deskripsi' => $this->request->getVar('deskripsi'),
-            'button' => $this->request->getVar('button'),
-            'background' =>  $nameBackground
+            'image' =>  $nameimage
         ]);
 
         session()->setFlashdata('update', 'Data berhasil Diupdate.');
 
-        return redirect()->to('/hero');
+        return redirect()->to('/products');
     }
 }

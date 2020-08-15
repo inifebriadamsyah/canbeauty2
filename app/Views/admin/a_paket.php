@@ -59,14 +59,14 @@
                                     <input type="text" class="form-control" id="harga_paket" name="harga_paket" required>
                                 </div>
 
-                                <p>Image</p>
+                                <p>Gambar</p>
                                 <div class="form-group row">
                                     <div class="col-md-4">
                                         <img src="/asset_main/sval/images/paket1.png" class="img-thumbnail img-preview">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input <?= ($validation->hasError('image')) ? 'is-invalid' : ''; ?>" id="image" name="image" onchange="previewImgPaket()">
+                                            <input type="file" class="custom-file-input <?= ($validation->hasError('image')) ? 'is-invalid' : ''; ?>" id="image" name="image" onchange="previewImg()">
                                             <label class="custom-file-label" for="image">Choose file</label>
                                         </div>
                                     </div>
@@ -138,14 +138,14 @@
                                                 <input type="text" class="form-control" id="harga_paket" name="harga_paket" value="<?= $p['harga_paket']; ?>" required>
                                             </div>
 
-                                            <p>Image</p>
+                                            <p>Gambar</p>
                                             <div class="form-group row">
                                                 <div class="col-md-4">
                                                     <img src="/img/<?= $p['image']; ?>" class="img-thumbnail img-preview">
                                                 </div>
                                                 <div class="col-md-8">
                                                     <div class="custom-file">
-                                                        <input type="file" class="custom-file-input <?= ($validation->hasError('image')) ? 'is-invalid' : ''; ?>" id="image" name="image" value="<?= $p['image']; ?>" onchange="previewImg()">
+                                                        <input type="file" class="custom-file-input <?= ($validation->hasError('image')) ? 'is-invalid' : ''; ?>" id="image" name="image" value="<?= $p['image']; ?>" onchange="previewEdit()">
                                                         <div class="inavlid-feedback">
                                                             <?= $validation->getError('image') ?>
                                                         </div>
@@ -169,4 +169,35 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function previewImg() {
+        const image = document.querySelector('#image');
+        const imageLabel = document.querySelector('.custom-file-label');
+        const imgPreview = document.querySelector('.img-preview');
+
+        imageLabel.textContent = image.files[0].name;
+
+        const fileimage = new FileReader();
+        fileimage.readAsDataURL(image.files[0]);
+
+        fileimage.onload = function(e) {
+            imgPreview.src = e.target.result;
+        }
+    }
+
+    function previewEdit() {
+        const image2 = document.querySelector('#image');
+        const imageLabel = document.querySelector('.custom-file-label');
+        const imgPreview = document.querySelector('.img-preview');
+
+        imageLabel.textContent = image2.files[0].name;
+
+        const fileimage = new FileReader();
+        fileimage.readAsDataURL(image2.files[0]);
+
+        fileimage.onload = function(e) {
+            imgPreview.src = e.target.result;
+        }
+    }
+</script>
 <?= $this->endSection(); ?>
