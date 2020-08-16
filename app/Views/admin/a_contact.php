@@ -27,9 +27,9 @@
     <?php endif; ?>
 </div>
 <div class="row">
-    <div class="col-12 ">
-        <div class="card my-2 mx-4">
-            <table class="table">
+    <div class="col-12">
+        <div class="card my-2 mx-4 overflow-auto">
+            <table class="table my-4">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">No</th>

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\TestimoniModel;
+use App\Models\TestimoniCategoryModel;
 
 class Testimoni extends BaseController
 {
@@ -10,6 +11,7 @@ class Testimoni extends BaseController
     public function __construct()
     {
         $this->testimoniModel = new TestimoniModel();
+        $this->testimoniCategoryModel = new TestimoniCategoryModel();
     }
 
     public function index()

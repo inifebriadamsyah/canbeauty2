@@ -28,10 +28,7 @@
 </div>
 <div class="row">
     <div class="col-12 ">
-        <div class="card my-2 mx-4">
-            <div class="col-md-4">
-                <a href="javascript:void(0);" type="button" data-toggle="modal" data-target="#createTugas" class="btn btn-success mb-3 my-3"> + Tambah Konten </a>
-            </div>
+        <div class="card my-2 mx-4 overflow-auto">
 
             <div class="modal fade" id="createTugas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
@@ -85,8 +82,9 @@
                     <tr>
                         <th scope="col">No</th>
                         <th scope="col">Footer Text</th>
-                        <th scope="col">Link Facebook</th>
-                        <th scope="col">Link Instagram</th>
+                        <th scope="col" style="width: 8%;">Link Facebook</th>
+                        <th scope="col" style="width: 8%;">Link Instagram</th>
+                        <th scope="col" style="width: 8%;">Link WhatsApp</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -100,6 +98,7 @@
                             <td><?= $f['footer_text']; ?></td>
                             <td><?= $f['facebook']; ?></td>
                             <td><?= $f['instagram']; ?></td>
+                            <td><?= $f['whatsapp']; ?></td>
                             <td>
                                 <a href="javascript:void(0);" type="button" data-toggle="modal" data-target="#editContent<?= $f['id']; ?>" class="btn btn-warning"> Edit </a>
                             </td>
@@ -129,6 +128,10 @@
                                             <div class="form-group">
                                                 <label for="instagram" class="col-form-label">Link Instagram</label>
                                                 <input type="text" class="form-control" id="instagram" name="instagram" value="<?= $f['instagram']; ?>" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="whatsapp" class="col-form-label">Link WhatsApp</label>
+                                                <input type="text" class="form-control" id="whatsapp" name="whatsapp" value="<?= $f['whatsapp']; ?>" required>
                                             </div>
 
                                             <div class="modal-footer mt-4">

@@ -1,9 +1,9 @@
- <div class="site-section bg-img2" style="background-image: url(asset_main/sval/images/hero4.png)" id="paket-section">
+ <div class="site-section bg-img2" style="background-image: url(img/hero4.png)" id="paket-section">
      <div class="container">
          <div class="row mt-5 mb-5 ">
              <div class="col-md-9">
                  <h2 class="section-title mb-3" data-aos="fade-up" data-aos-delay="">Paket Penjualan</h2>
-                 <p class="lead" data-aos="fade-up" data-aos-delay="100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus minima neque tempora reiciendis. Minus minima neque tempora reiciendis.</p>
+                 <p class="lead" data-aos="fade-up" data-aos-delay="100">Tersedia banyak paket penjualan yang diapat dipilih oleh pembeli.</p>
              </div>
          </div>
          <div class="featured_candidates_area ">
@@ -14,7 +14,7 @@
                              <?php foreach ($paket as $p) : ?>
                                  <div class="single_candidates text-center">
                                      <div class="thumb">
-                                         <img src="asset_main/sval/images/<?= $p['image']; ?>" alt="">
+                                         <img src="img/<?= $p['image']; ?>" alt="">
                                      </div>
                                      <a href="#">
                                          <h4><?= $p['nama_paket']; ?></h4>

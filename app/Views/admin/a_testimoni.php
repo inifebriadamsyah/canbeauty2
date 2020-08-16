@@ -48,9 +48,10 @@
                                 <div class="form-group">
                                     <label for="message-text" class="col-form-label">Kategori</label>
                                     <select name="category" id="category" class="form-control form-control-rounded" required>
-                                        <option selected value="Category1">Preview</option>
-                                        <option value="Category2">Before After</option>
-                                        <option value="Category3">Testimoni</option>
+                                        <option value="">Please Select</option>
+                                        <option value="1">Preview</option>
+                                        <option value="2">Before and After</option>
+                                        <option value="3">Testimoni</option>
                                     </select>
                                 </div>
 
@@ -91,7 +92,15 @@
                             <th scope="row">
                                 <?= $i++; ?>
                             </th>
-                            <td><?= $t['category']; ?></td>
+                            <td>
+                                <?php if ($t['category'] == 1) : ?>
+                                    Preview
+                                <?php elseif ($t['category'] == 2) : ?>
+                                    Before After
+                                <?php elseif ($t['category'] == 3) : ?>
+                                    Testimoni
+                                <?php endif; ?>
+                            </td>
                             <td><?= $t['image']; ?></td>
                             <td>
                                 <a href="javascript:void(0);" type="button" data-toggle="modal" data-target="#editContent<?= $t['id']; ?>" class="btn btn-warning"> Edit </a>
@@ -110,15 +119,28 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="testimoni/save" method="POST" enctype="multipart/form-data">
+                                        <form action="testimoni/update" method="POST" enctype="multipart/form-data">
                                             <?= csrf_field(); ?>
                                             <input type="hidden" name="oldImage" , value="<?= $t['image']; ?>">
                                             <div class="form-group">
                                                 <label for="message-text" class="col-form-label">Kategori</label>
                                                 <select name="category" id="category" class="form-control form-control-rounded" required>
-                                                    <option value="Category1">Preview</option>
-                                                    <option value="Category2">Before After</option>
-                                                    <option value="Category3">Testimoni</option>
+                                                    <?php if ($t['category'] == 1) : ?>
+                                                        <option value="">Please Select</option>
+                                                        <option value selected="1">Preview</option>
+                                                        <option value="2">Before and After</option>
+                                                        <option value="3">Testimoni</option>
+                                                    <?php elseif ($t['category'] == 2) : ?>
+                                                        <option value="">Please Select</option>
+                                                        <option value="1">Preview</option>
+                                                        <option value selected="2">Before and After</option>
+                                                        <option value="3">Testimoni</option>
+                                                    <?php elseif ($t['category'] == 3) : ?>
+                                                        <option value="">Please Select</option>
+                                                        <option value="1">Preview</option>
+                                                        <option value="2">Before and After</option>
+                                                        <option value selected="3">Testimoni</option>
+                                                    <?php endif; ?>
                                                 </select>
                                             </div>
 

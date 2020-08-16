@@ -1,4 +1,4 @@
-<section class="site-section testimonial-wrap bg-img" style="background-image: url(asset_main/sval/images/hero3.png)" id="testimoni-section" data-aos="fade up">
+<section class="site-section testimonial-wrap bg-img" style="background-image: url(img/hero3.png)" id="testimoni-section" data-aos="fade up">
     <div class="container ">
         <div class="row mb-5 ">
             <div class="col-12 text-center ">
@@ -14,7 +14,7 @@
                         <p>&ldquo;<?= $u['ulasan_teks']; ?>&rdquo;</p>
                     </blockquote>
                     <figure class="mb-4 d-flex align-items-center justify-content-center ">
-                        <div><img src="asset_main/sval/images/<?= $u['image_pembeli']; ?>" alt="Image " class="w-50 img-fluid mb-3 "></div>
+                        <div><img src="img/<?= $u['image_pembeli']; ?>" alt="Image " class="w-50 img-fluid mb-3 "></div>
                         <p><?= $u['nama_pembeli']; ?></p>
                     </figure>
                 </div>

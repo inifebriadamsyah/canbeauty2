@@ -8,33 +8,33 @@
             Profil Perusahaan
         </h2>
     </div>
+    <?php if (session()->getFlashdata('pesan')) : ?>
+        <div class="alert alert-success" role="alert">
+            <?= session()->getFlashdata('pesan'); ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if (session()->getFlashdata('hapus')) : ?>
+        <div class="alert alert-danger" role="alert">
+            <?= session()->getFlashdata('hapus'); ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if (session()->getFlashdata('update')) : ?>
+        <div class="alert alert-warning" role="alert">
+            <?= session()->getFlashdata('update'); ?>
+        </div>
+    <?php endif; ?>
 </div>
-<?php if (session()->getFlashdata('pesan')) : ?>
-    <div class="alert alert-success" role="alert">
-        <?= session()->getFlashdata('pesan'); ?>
-    </div>
-<?php endif; ?>
-
-<?php if (session()->getFlashdata('hapus')) : ?>
-    <div class="alert alert-danger" role="alert">
-        <?= session()->getFlashdata('hapus'); ?>
-    </div>
-<?php endif; ?>
-
-<?php if (session()->getFlashdata('update')) : ?>
-    <div class="alert alert-warning" role="alert">
-        <?= session()->getFlashdata('update'); ?>
-    </div>
-<?php endif; ?>
 <div class="row">
-    <div class="col-12 ">
-        <div class="card my-2 mx-4">
+    <div class="col-12">
+        <div class="card my-2 mx-4 overflow-auto">
             <!--
             <div class="col-md-4">
                 <a href="javascript:void(0);" type="button" data-toggle="modal" data-target="#createTugas" class="btn btn-success mb-3 my-3"> + Tambah Konten </a>
             </div>
             -->
-            <table class="table">
+            <table class="table my-4">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">No</th>
@@ -131,7 +131,7 @@
 
         const fileimage = new FileReader();
         fileimage.readAsDataURL(image.files[0]);
-        
+
 
         fileimage.onload = function(e) {
             imgPreview.src = e.target.result;

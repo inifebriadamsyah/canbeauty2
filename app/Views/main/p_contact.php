@@ -8,23 +8,23 @@
                         </div>
                         <br>
                         <h3>Kantor Operasional</h3>
-                        <p><a class="mt-30" href="# "><?= $k['alamat']; ?></a></p>
+                        <p><a class="mt-30" href="<?= $k['alamat_link']; ?>"><?= $k['alamat']; ?></a></p>
                     </div>
                 </div>
                 <div class="col-md-3 mt-30 mt-md-0">
                     <div class="feature-box fbox-plain fbox-small color mb-0">
-                        <div class="fbox-icon"> <i class="icon-whatsapp"></i> </div>
+                        <div class="fbox-icon"><i class="icon-whatsapp"></i> </div>
                         <br>
-                        <h3>Telephone</h3>
-                        <p><a href="# "><?= $k['telpon']; ?></a></p>
+                        <h3>Whatsapp</h3>
+                        <p><a href="<?= $k['whatsapp_link']; ?>"><?= $k['whatsapp']; ?></a></p>
                     </div>
                 </div>
                 <div class="col-md-3 mt-30 mt-md-0">
                     <div class="feature-box fbox-plain fbox-small color mb-0">
-                        <div class="fbox-icon"> <i class="icon-mail_outline"></i> </div>
+                        <div class="fbox-icon"> <i class="icon-facebook-square"></i> </div>
                         <br>
-                        <h3>Email</h3>
-                        <p><a href="# "><?= $k['facebook']; ?></a></p>
+                        <h3>Facebook</h3>
+                        <p><a href="<?= $k['facebook_link']; ?>"><?= $k['facebook']; ?></a></p>
                     </div>
                 </div>
                 <div class="col-md-3 mt-30 mt-md-0">
@@ -32,7 +32,7 @@
                         <div class="fbox-icon"> <i class="icon-instagram"></i> </div>
                         <br>
                         <h3>Instagram</h3>
-                        <p><a href="# "><?= $k['instagram']; ?></a></p>
+                        <p><a href="<?= $k['instagram_link']; ?>"><?= $k['instagram']; ?></a></p>
                     </div>
                 </div>
             </div>

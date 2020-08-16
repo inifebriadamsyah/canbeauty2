@@ -64,7 +64,7 @@
         <!-- Single Slide -->
         <div class="single-slide bg-img">
             <!-- Background Image-->
-            <div class="slide-bg-img bg-img bg-overlay" style="background-image: url(asset_main/sval/images/slide3.jpeg);"></div>
+            <div class="slide-bg-img bg-img bg-overlay" style="background-image: url(img/slide3.jpeg);"></div>
             <!-- Welcome Text -->
             <div class="container h-100">
                 <div class="row h-100 align-items-center justify-content-center">

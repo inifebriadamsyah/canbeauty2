@@ -5,15 +5,13 @@
                 <?php foreach ($footer as $f) : ?>
                     <div class="row ">
                         <div class="col-md-8 col-lg-8 md-8">
-                            <h2 class="footer-heading mb-4 ">CanBeauty</h2>
+                            <h2 class="footer-heading mb-4 ">Can Beauty</h2>
                             <p><?= $f['footer_text']; ?></p>
                         </div>
                         <div class="col-md-4 col-lg-4 col-md-4">
                             <h2 class="footer-heading mb-4">Follow Us</h2>
-                            <a href="<?= $f['facebook']; ?>" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                            <a href="<?= $f['instagram']; ?>" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                            <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-                            <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                            <a href="<?= $f['facebook']; ?>" style="font-size: 40px;" class="pl-0 pr-3"><span class="icon-facebook-square"></span></a>
+                            <a href="<?= $f['instagram']; ?>" style="font-size: 40px;" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
                         </div>
                     </div>
                     <div class="row">
@@ -37,7 +35,7 @@
 </div>
 <!-- Scroll Up -->
 <div id="back-top" data-aos="fade-up" data-aos-delay="100">
-    <a title="hubungi kami" href="#home-section"><img src="asset_main/sval/images/whatsapp.png" alt="logo can beauty" width="44px" height="44px">
+    <a title="hubungi kami" href="#home-section"><img src="img/whatsapp.png" alt="logo can beauty" width="44px" height="44px">
     </a>
 </div>
 

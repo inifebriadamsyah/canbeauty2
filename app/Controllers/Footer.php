@@ -41,7 +41,8 @@ class Footer extends BaseController
         if (!$this->validate([
             'footer_text' => 'required',
             'facebook' => 'required',
-            'instagram' => 'required'
+            'instagram' => 'required',
+            'whatsapp' => 'required'
         ])) {
             //$validation = \Config\Services::validation();
             return redirect()->to('/kontak')->withInput();
@@ -53,6 +54,7 @@ class Footer extends BaseController
             'footer_text' => $this->request->getVar('footer_text'),
             'facebook' => $this->request->getVar('facebook'),
             'instagram' => $this->request->getVar('instagram'),
+            'whatsapp' => $this->request->getVar('whatsapp')
         ]);
 
         session()->setFlashdata('update', 'Data berhasil Diupdate.');

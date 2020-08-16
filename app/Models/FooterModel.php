@@ -8,5 +8,5 @@ class FooterModel extends Model
 {
     protected $table      = 'footer';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['id', 'footer_text', 'facebook', 'instagram'];
+    protected $allowedFields = ['id', 'footer_text', 'facebook', 'instagram', 'whatsapp'];
 }

@@ -28,7 +28,7 @@
 </div>
 <div class="row">
     <div class="col-12 ">
-        <div class="card my-2 mx-4">
+        <div class="card my-2 mx-4 overflow-auto">
             <div class="col-md-4">
                 <a href="javascript:void(0);" type="button" data-toggle="modal" data-target="#createContent" class="btn btn-success mb-3 my-3">+ Tambah Konten</a>
             </div>
