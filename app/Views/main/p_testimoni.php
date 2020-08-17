@@ -10,10 +10,10 @@
         <div class="row justify-content-center mb-5" data-aos="fade-up">
             <div id="filters" class="filters text-center button-group col-md-9">
                 <button class="btn btn-secondary active" data-filter="*">All</button>
-                <?php foreach ($testimoni as $i) : ?>
-                    <button class="btn btn-secondary" data-filter=".<?= $i['category']; ?>"> <?php if ($i['category'] == 1)  echo "Preview";
-                                                                                                elseif ($i['category'] == 2)  echo "Before After";
-                                                                                                elseif ($i['category'] == 3)  echo "Testimoni" ?>
+                <?php foreach ($testimoni_category as $i) : ?>
+                    <button class="btn btn-secondary" data-filter=".<?= $i['id']; ?>"> <?php if ($i['id'] == 1)  echo "Preview";
+                                                                                        elseif ($i['id'] == 2)  echo "Before After";
+                                                                                        elseif ($i['id'] == 3)  echo "Testimoni" ?>
 
                     </button>
                 <?php endforeach; ?>

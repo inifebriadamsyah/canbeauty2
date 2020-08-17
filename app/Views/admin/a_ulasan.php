@@ -56,7 +56,7 @@
                                 <p>Gambar Pembeli</p>
                                 <div class="form-group row">
                                     <div class="col-md-4">
-                                        <img src="/asset_main/sval/images/paket1.png" class="img-thumbnail img-preview">
+                                        <img src="img/paket1.png" class="img-thumbnail img-preview">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="custom-file">
@@ -93,14 +93,16 @@
                                 <?= $i++; ?>
                             </th>
                             <td><?= $u['ulasan_teks']; ?></td>
-                            <td><?= $u['image_pembeli']; ?></td>
+                            <td><img src="img/<?= $u['image_pembeli']; ?>" id="myImg"><?= $u['image_pembeli']; ?></td>
                             <td><?= $u['nama_pembeli']; ?></td>
                             <td>
-                                <a href="javascript:void(0);" type="button" data-toggle="modal" data-target="#editContent<?= $u['id']; ?>" class="btn btn-warning"> Edit </a>
+                                <a href="javascript:void(0);" type="button" data-toggle="modal" data-target="#editContent<?= $u['id']; ?>" class="btn btn-warning my-2"> Edit </a>
                                 <a href="/ulasan/delete/<?= $u['id']; ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin menghapus baris ini?');"> Delete </a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
+                    <!-- The Modal -->
+
                     <?php foreach ($ulasan as $u) : ?>
                         <div class="modal fade" id="editContent<?= $u['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
@@ -114,8 +116,7 @@
                                     <div class="modal-body">
                                         <form action="ulasan/update/<?= $u['id']; ?>" method="POST" enctype="multipart/form-data">
                                             <?= csrf_field(); ?>
-                                            <input type="hidden" name="oldImage" , value="<?= $u['image_pembeli']; ?>">
-
+                                            <input type="hidden" name="oldimage" , value="<?= $u['image_pembeli']; ?>">
                                             <div class="form-group">
                                                 <label for="ulasan_teks" class="col-form-label">Ulasan Teks:</label>
                                                 <input type="text" class="form-control" id="ulasan_teks" name="ulasan_teks" value="<?= $u['ulasan_teks']; ?>" required>

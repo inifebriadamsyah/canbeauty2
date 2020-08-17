@@ -2,50 +2,46 @@
 
 namespace App\Controllers;
 
-use App\Models\TestimoniModel;
-use App\Models\TestimoniCategoryModel;
+use App\Models\ProfileModel;
 
-class Testimoni extends BaseController
+class Profile extends BaseController
 {
-    protected $testimoniModel;
-    protected $testimoniCategoryModel;
+    protected $profileModel;
     public function __construct()
     {
-        $this->testimoniModel = new TestimoniModel();
-        $this->testimoniCategoryModel = new TestimoniCategoryModel();
+        $this->profileModel = new ProfileModel();
     }
 
     public function index()
     {
         session();
-        $testimoni = $this->testimoniModel->findAll();
-        $testimoni_category = $this->testimoniCategoryModel->findAll();
+        $profile = $this->profileModel->findAll();
         $data = [
             'title' => 'Admin Canbeauty.id',
-            'testimoni' => $testimoni,
-            'testimoni_category' => $testimoni_category,
+            'profile' => $profile,
             'validation' => \Config\Services::validation()
         ];
-        //dd($testimoni);
-        echo view('admin/a_testimoni', $data);
+        //dd($profile);
+        echo view('admin/a_profile', $data);
     }
 
     public function getView()
     {
-        $testimoni = $this->testimoniModel->findAll();
-        $testimoni_category = $this->testimoniCategoryModel->findAll();
+        $profile = $this->profileModel->findAll();
         $data = [
             'title' => 'Admin Canbeauty.id',
-            'testimoni' => $testimoni,
-            'testimoni_category' => $testimoni_category
+            'profile' => $profile
         ];
-        //dd($testimoni);
-        echo view('main/p_testimoni', $data);
+        //dd($profile);
+        echo view('main/p_profile', $data);
     }
+
     public function save()
     {
         if (!$this->validate([
-            'category' => 'required'
+            'sub_title' => 'required',
+            '2nd_desc' => 'required',
+            '3nd_desc' => 'required'
             //'image' => 'required'
         ], [
             'image' => [
@@ -58,8 +54,8 @@ class Testimoni extends BaseController
             ]
         ])) {
             // $validation = \Config\Services::validation();
-            // return redirect()->to('/testimoni')->withInput()->with('validation', $validation);
-            return redirect()->to('/testimoni')->withInput();
+            // return redirect()->to('/profile')->withInput()->with('validation', $validation);
+            return redirect()->to('/profile')->withInput();
         }
 
         $fileimage = $this->request->getFile('image');
@@ -71,34 +67,38 @@ class Testimoni extends BaseController
             $nameimage = $fileimage->getName();
         }
 
-        $this->testimoniModel->save([
-            'category' => $this->request->getVar('category'),
-            'image' => $nameimage
+        $this->profileModel->save([
+            'sub_title' => $this->request->getVar('sub_title'),
+            '2nd_desc' => $this->request->getVar('2nd_desc'),
+            '3nd_desc' => $this->request->getVar('3nd_desc'),
+            'image' =>  $nameimage
         ]);
 
         session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
 
-        return redirect()->to('/testimoni');
+        return redirect()->to('/profile');
     }
 
     public function delete($id)
     {
-        $testimoni = $this->testimoniModel->find($id);
+        $profile = $this->profileModel->find($id);
 
-        if ($testimoni['image'] != 'slide3.jpeg') {
-            unlink('img/' . $testimoni['image']);
+        if ($profile['image'] != 'slide3.jpeg') {
+            unlink('img/' . $profile['image']);
         }
 
-        $this->testimoniModel->delete($id);
+        $this->profileModel->delete($id);
         session()->setFlashdata('hapus', 'Data berhasil dihapus.');
 
-        return redirect()->to('/testimoni');
+        return redirect()->to('/profile');
     }
 
     public function update($id)
     {
         if (!$this->validate([
-            'category' => 'required'
+            'sub_title' => 'required',
+            '2nd_desc' => 'required',
+            '3nd_desc' => 'required'
             //'image' => 'required'
         ], [
             'image' => [
@@ -111,7 +111,7 @@ class Testimoni extends BaseController
             ]
         ])) {
             //$validation = \Config\Services::validation();
-            return redirect()->to('/testimoni')->withInput();
+            return redirect()->to('/profile')->withInput();
         }
 
         $fileimage = $this->request->getFile('image');
@@ -126,14 +126,16 @@ class Testimoni extends BaseController
             unlink('img/' .  $this->request->getVar('oldimage'));
         }
 
-        $this->testimoniModel->save([
+        $this->profileModel->save([
             'id' => $id,
-            'category' => $this->request->getVar('category'),
+            'sub_title' => $this->request->getVar('sub_title'),
+            '2nd_desc' => $this->request->getVar('2nd_desc'),
+            '3nd_desc' => $this->request->getVar('3nd_desc'),
             'image' =>  $nameimage
         ]);
 
         session()->setFlashdata('update', 'Data berhasil Diupdate.');
 
-        return redirect()->to('/testimoni');
+        return redirect()->to('/profile');
     }
 }

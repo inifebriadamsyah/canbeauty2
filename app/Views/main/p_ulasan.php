@@ -8,6 +8,7 @@
     </div>
     <div class="slide-one-item home-slider owl-carousel ">
         <?php foreach ($ulasan as $u) : ?>
+
             <div>
                 <div class="testimonial ">
                     <blockquote class="mb-5 ">

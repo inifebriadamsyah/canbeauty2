@@ -115,10 +115,10 @@ class Ulasan extends BaseController
         //$nameimage = "";
 
         if ($fileimage->getError() == 4) {
-            $nameimage = $this->request->getVar('oldimage');;
+            $image_pembeli = $this->request->getVar('oldimage');;
         } else {
             $fileimage->move('img');
-            $nameimage = $fileimage->getName();
+            $image_pembeli = $fileimage->getName();
 
             unlink('img/' .  $this->request->getVar('oldimage'));
         }
@@ -127,7 +127,7 @@ class Ulasan extends BaseController
             'id' => $id,
             'ulasan_teks' => $this->request->getVar('ulasan_teks'),
             'nama_pembeli' => $this->request->getVar('nama_pembeli'),
-            'image_pembeli' =>  $nameimage
+            'image_pembeli' =>  $image_pembeli
         ]);
 
         session()->setFlashdata('update', 'Data berhasil Diupdate.');

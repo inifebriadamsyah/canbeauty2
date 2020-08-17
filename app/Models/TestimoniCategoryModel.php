@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class TestimoniModel extends Model
+class TestimoniCategoryModel extends Model
 {
     protected $table      = 'testimoni_category';
     protected $primaryKey = 'id';
