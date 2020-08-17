@@ -102,7 +102,7 @@
                             <td><?= $p['nama_paket']; ?></td>
                             <td><?= $p['harga_paket']; ?></td>
                             <td><?= $p['deskripsi_paket']; ?></td>
-                            <td><?= $p['image']; ?></td>
+                            <td><a href="img/<?= $p['image']; ?>"><img src="img/<?= $p['image']; ?>" style="height:150px"><br><?= $p['image']; ?></a></td>
                             <td>
                                 <a href="javascript:void(0);" type="button" data-toggle="modal" data-target="#editContent<?= $p['id']; ?>" class="btn btn-warning"> Edit </a>
                                 <a href="/paket/delete/<?= $p['id']; ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin menghapus baris ini?');"> Delete </a>

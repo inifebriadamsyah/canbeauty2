@@ -93,7 +93,7 @@
                                 <?= $i++; ?>
                             </th>
                             <td><?= $u['ulasan_teks']; ?></td>
-                            <td><img src="img/<?= $u['image_pembeli']; ?>" id="myImg"><?= $u['image_pembeli']; ?></td>
+                            <td><a href="img/<?= $u['image_pembeli']; ?>"><img src="img/<?= $u['image_pembeli']; ?>" style="height:150px"><br><?= $u['image_pembeli']; ?></a></td>
                             <td><?= $u['nama_pembeli']; ?></td>
                             <td>
                                 <a href="javascript:void(0);" type="button" data-toggle="modal" data-target="#editContent<?= $u['id']; ?>" class="btn btn-warning my-2"> Edit </a>
@@ -160,7 +160,7 @@
         const imageLabel = document.querySelector('.custom-file-label');
         const imgPreview = document.querySelector('.img-preview');
 
-        imageLabel.textContent = image_pembeli.files[0].name;
+        imageLabel.textContent = image.files[0].name;
 
         const fileimage = new FileReader();
         fileimage.readAsDataURL(image.files[0]);

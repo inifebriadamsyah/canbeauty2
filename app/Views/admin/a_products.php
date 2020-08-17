@@ -95,7 +95,7 @@
                             </th>
                             <td><?= $p['nama_produk']; ?></td>
                             <td><?= $p['deskripsi']; ?></td>
-                            <td><?= $p['image']; ?></td>
+                            <td><a href="img/<?= $p['image']; ?>"><img src="img/<?= $p['image']; ?>" style="height:150px"><br><?= $p['image']; ?></a></td>
                             <td>
                                 <a href="javascript:void(0);" type="button" data-toggle="modal" data-target="#editContent<?= $p['id']; ?>" class="btn btn-warning"> Edit </a>
                                 <a href="/products/delete/<?= $p['id']; ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin menghapus baris ini?');"> Delete </a>
@@ -123,7 +123,7 @@
 
                                             <div class=" form-group">
                                                 <label for="deskripsi" class="col-form-label">Deskripsi:</label>
-                                                <textarea class="form-control" id="deskripsi" name="deskripsi" value="<?= $p['deskripsi']; ?>" required></textarea>
+                                                <input style="height:fit-content" type="text" class="form-control" id="deskripsi" name="deskripsi" value="<?= $p['deskripsi']; ?>" required></input>
                                             </div>
 
                                             <p>Gambar Produk</p>

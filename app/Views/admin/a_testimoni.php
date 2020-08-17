@@ -101,7 +101,7 @@
                                     Testimoni
                                 <?php endif; ?>
                             </td>
-                            <td><?= $t['image']; ?></td>
+                            <td><a href="img/<?= $t['image']; ?>"><img src="img/<?= $t['image']; ?>" style="height:150px"><br><?= $t['image']; ?></a></td>
                             <td>
                                 <a href="javascript:void(0);" type="button" data-toggle="modal" data-target="#editContent<?= $t['id']; ?>" class="btn btn-warning"> Edit </a>
                                 <a href="/testimoni/delete/<?= $t['id']; ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin menghapus baris ini?');"> Delete </a>

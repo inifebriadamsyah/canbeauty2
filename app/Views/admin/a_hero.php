@@ -104,7 +104,7 @@
                             <td><?= $h['judul']; ?></td>
                             <td><?= $h['deskripsi']; ?></td>
                             <td><?= $h['button']; ?></td>
-                            <td><?= $h['background']; ?></td>
+                            <td><a href="img/<?= $h['background']; ?>"><img src="img/<?= $h['background']; ?>" style="height:150px"><br><?= $h['background']; ?></a></td>
                             <td>
                                 <a href="javascript:void(0);" type="button" data-toggle="modal" data-target="#editContent<?= $h['id']; ?>" class="btn btn-warning"> Edit </a>
                                 <a href="/hero/delete/<?= $h['id']; ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin menghapus baris ini?');"> Delete </a>

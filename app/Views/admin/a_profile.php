@@ -55,7 +55,7 @@
                             <td><?= $p['sub_title']; ?></td>
                             <td><?= $p['2nd_desc']; ?></td>
                             <td><?= $p['3nd_desc']; ?></td>
-                            <td><?= $p['image']; ?></td>
+                            <td><a href="img/<?= $p['image']; ?>"><img src="img/<?= $p['image']; ?>" style="height:150px"><br><?= $p['image']; ?></a></td>
                             <td>
                                 <a href="javascript:void(0);" type="button" data-toggle="modal" data-target="#editContent<?= $p['id']; ?>" class="btn btn-warning"> Edit </a>
                             </td>
