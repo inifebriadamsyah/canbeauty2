@@ -15,6 +15,10 @@ class Kontak extends BaseController
     public function index()
     {
         session();
+        if (session()->get('email') == '') {
+            session()->setFlashdata('failed', 'Silakan Login terlebih dahulu!');
+            return redirect()->to(base_url('users'));
+        }
         $kontak = $this->kontakModel->findAll();
         $data = [
             'title' => 'Admin Canbeauty.id',

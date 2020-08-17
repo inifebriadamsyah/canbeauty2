@@ -15,6 +15,10 @@ class Paket extends BaseController
     public function index()
     {
         session();
+        if (session()->get('email') == '') {
+            session()->setFlashdata('failed', 'Silakan Login terlebih dahulu!');
+            return redirect()->to(base_url('users'));
+        }
         $paket = $this->paketModel->findAll();
         $data = [
             'title' => 'Admin Canbeauty.id',

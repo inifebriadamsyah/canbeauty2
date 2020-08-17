@@ -42,12 +42,12 @@
 
                   <!-- Divider -->
                   <hr class="sidebar-divider">
-                  <br>
                   <?php if (!empty(session()->getFlashdata('failed'))) : ?>
                     <div class="alert alert-danger" role="alert">
                       <?= session()->getFlashdata('failed'); ?>
                     </div>
                   <?php endif; ?>
+                  <br>
 
                   <form action="users/login" method="POST">
                     <div class="form-group row">

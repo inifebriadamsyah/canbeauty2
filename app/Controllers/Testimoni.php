@@ -18,6 +18,10 @@ class Testimoni extends BaseController
     public function index()
     {
         session();
+        if (session()->get('email') == '') {
+            session()->setFlashdata('failed', 'Silakan Login terlebih dahulu!');
+            return redirect()->to(base_url('users'));
+        }
         $testimoni = $this->testimoniModel->findAll();
         $testimoni_category = $this->testimoniCategoryModel->findAll();
         $data = [

@@ -119,7 +119,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mx-3 d-none d-lg-inline text-gray-600 small">
-                                    <? echo session()->get('email'); ?>
+                                    <?= session()->get('email'); ?>
                                 </span>
                                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60" />
                             </a>
@@ -178,7 +178,7 @@
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">
                         Cancel
                     </button>
-                    <a class="btn btn-primary" href=<?= base_url('users/') ?>>Logout</a>
+                    <a class="btn btn-primary" href=<?= base_url('users/logout') ?>>Logout</a>
                 </div>
             </div>
         </div>

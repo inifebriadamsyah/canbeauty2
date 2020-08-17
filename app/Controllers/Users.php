@@ -16,11 +16,11 @@ class Users extends BaseController
     public function index()
     {
         session();
-        $login = $this->usersModel->findAll();
+        //$login = $this->usersModel->findAll();
         helper(['form']);
         $data = [
-            'title' => 'Login Admin Canbeauty.id',
-            'login' => $login
+            'title' => 'Login Admin Canbeauty.id'
+
             //'validation' => \Config\Services::validation()
         ];
         echo view('admin/login', $data);
@@ -35,7 +35,7 @@ class Users extends BaseController
         $check = $this->UsersModel->cekLogin($email, $password);
         if (($check['email'] != $email) && ($check['password'] != $password)) {
             session()->setFlashdata('failed', 'Email atau password salah!!!');
-            return redirect()->to(base_url('login'));
+            return redirect()->to(base_url('users'));
         } else {
             session()->set('email', $check['email']);
             session()->set('password', $check['password']);
@@ -48,6 +48,6 @@ class Users extends BaseController
     public function logout()
     {
         session()->destroy();
-        return redirect()->to(base_url('login'));
+        return redirect()->to(base_url('users'));
     }
 }
