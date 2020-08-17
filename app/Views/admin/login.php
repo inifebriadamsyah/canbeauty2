@@ -43,7 +43,13 @@
                   <!-- Divider -->
                   <hr class="sidebar-divider">
                   <br>
-                  <form action="login/cekLogin/<?= $p['id']; ?>" method="POST" enctype="multipart/form-data">
+                  <?php if (!empty(session()->getFlashdata('failed'))) : ?>
+                    <div class="alert alert-danger" role="alert">
+                      <?= session()->getFlashdata('failed'); ?>
+                    </div>
+                  <?php endif; ?>
+
+                  <form action="users/login" method="POST">
                     <div class="form-group row">
                       <label for="email" class="col-sm-2 col-form-label" style=" font-weight: 700;">Email</label>
                       <div class="col-sm-10">
